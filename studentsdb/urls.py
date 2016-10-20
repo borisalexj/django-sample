@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+import django
+from django.conf.urls import url, patterns
 from django.contrib import admin
 import students.views
 
 urlpatterns = [
-    #Students urls
+    # Students urls
     url(r'^$', students.views.students_list, name='home'),
     url(r'^students/add/$', students.views.students_add, name='students_add'),
     url(r'^students/(?P<sid>\d+)/edit/$', students.views.students_edit, name='students_edit'),
@@ -27,11 +28,20 @@ urlpatterns = [
     # Journal urls
     url(r'^journal/$', students.views.journal, name='journal'),
 
-    #Groups urls
+    # Groups urls
     url(r'^groups/$', students.views.groups_list, name='groups'),
     url(r'^groups/add/$', students.views.groups_add, name='groups_add'),
     url(r'^groups/(?P<gid>\d+)/edit/$', students.views.groups_edit, name='groups_edit'),
     url(r'^groups/(?P<gid>\d+)/delete/$', students.views.groups_delete, name='groups_delete'),
 
     url(r'^admin/', admin.site.urls),
+
+    # url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
 ]
+
+from .settings import MEDIA_ROOT, DEBUG
+
+if DEBUG:
+# serve files from media folder
+    urlpatterns += urlpatterns + [url(r'^media/(?P<path>.*)$', django.views.static.serve, {'document_root': MEDIA_ROOT}),]
+
