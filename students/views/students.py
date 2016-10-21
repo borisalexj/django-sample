@@ -38,7 +38,7 @@ def students_list(request):
     if order_by in ('last_name', 'first_name', 'ticket'):
         students = students.order_by(order_by)
         if request.GET.get('reverse', '') == '1':
-            students.reverse()
+            students = students.reverse()
 
     return render(request, 'students/students_list.html', {'students': students})
 
