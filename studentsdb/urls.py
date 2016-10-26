@@ -27,6 +27,7 @@ urlpatterns = [
 
     # Journal urls
     url(r'^journal/$', students.views.journal, name='journal'),
+    url(r'^journal/(?P<sid>\d+)/$', students.views.journal_for_student, name='journal_for_student'),
 
     # Groups urls
     url(r'^groups/$', students.views.groups_list, name='groups'),
