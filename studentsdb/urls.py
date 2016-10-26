@@ -41,8 +41,11 @@ urlpatterns = [
 ]
 
 from .settings import MEDIA_ROOT, DEBUG
+from django.conf.urls.static import static
 
 if DEBUG:
 # serve files from media folder
-    urlpatterns += urlpatterns + [url(r'^media/(?P<path>.*)$', django.views.static.serve, {'document_root': MEDIA_ROOT}),]
-
+    urlpatterns += urlpatterns + [url(r'^media/(?P<path>.*)$',  django.views.static.serve, {'document_root': MEDIA_ROOT}),]
+    # urlpatterns += urlpatterns + static((r'^media/(?P<path>.*)$', {'document_root': MEDIA_ROOT}), document_root = MEDIA_ROOT)
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
