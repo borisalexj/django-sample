@@ -12,3 +12,6 @@ from django.http import Http404
 def journal(request):
     return render(request, 'students/journal.html')
 
+
+def journal(request, sid):
+    return render(request, '<h1>journal Student %s</h1>' % sid)
