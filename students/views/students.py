@@ -8,6 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Views for Students
 from ..models import Student
+from ..models import Group
 
 
 def students_list(request):
@@ -37,7 +38,7 @@ def students_list(request):
 
 
 def students_add(request):
-    return render(request, 'students/students_add.html')
+    return render(request, 'students/students_add.html', {'groups': Group.objects.all().order_by('title')})
 
 
 def students_edit(request, sid):
