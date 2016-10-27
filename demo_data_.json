@@ -1,0 +1,117 @@
+[
+{
+    "model": "students.student",
+    "pk": 1,
+    "fields": {
+        "first_name": "Vitaliy",
+        "last_name": "Podoba",
+        "middle_name": "",
+        "birthday": "2016-10-12",
+        "photo": "",
+        "ticket": "234",
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 2,
+    "fields": {
+        "first_name": "Roman",
+        "last_name": "Demo",
+        "middle_name": "",
+        "birthday": "2016-10-12",
+        "photo": "./default_media_j5xl4uU.jpg",
+        "ticket": "911",
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 3,
+    "fields": {
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u041e\u0440\u0454\u0445\u043e\u0432",
+        "middle_name": "\u0412\u0456\u0442\u0430\u043b\u0456\u0439\u043e\u0432\u0438\u0447",
+        "birthday": "1975-05-26",
+        "photo": "./default_media_sJ7SNBy.jpg",
+        "ticket": "777",
+        "notes": "85298765432140",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 4,
+    "fields": {
+        "first_name": "user",
+        "last_name": "user",
+        "middle_name": "",
+        "birthday": "2016-01-10",
+        "photo": "./default_media_IkgillV.jpg",
+        "ticket": "123",
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 5,
+    "fields": {
+        "first_name": "Vitaliy",
+        "last_name": "Podoba",
+        "middle_name": "",
+        "birthday": "2016-10-20",
+        "photo": "",
+        "ticket": "2234",
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.group",
+    "pk": 1,
+    "fields": {
+        "title": "MTM",
+        "leader": 1,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 2,
+    "fields": {
+        "title": "MTM2",
+        "leader": 2,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 3,
+    "fields": {
+        "title": "MTM3",
+        "leader": 3,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 4,
+    "fields": {
+        "title": "MTM4",
+        "leader": 4,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 5,
+    "fields": {
+        "title": "MTM5",
+        "leader": 5,
+        "notes": ""
+    }
+}
+]
