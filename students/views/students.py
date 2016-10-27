@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import Http404
@@ -38,6 +40,37 @@ def students_list(request):
 
 
 def students_add(request):
+    if request.method == "POST":
+        if request.POST.get('add_button') is not None:
+            errors = {}
+
+            if not errors:
+                student = Student(
+                    first_name=request.POST['first_name'],
+                    last_name=request.POST['last_name'],
+                    midle_name=request.POST['middle_name'],
+                    birthday=request.POST['birthday'],
+                    ticket=request.POST['ticket'],
+                    student_group=Group.objects.get(pk=request.POST['student_group']),
+                    photo=request.FILES['photo'],
+                )
+
+                student.save()
+
+                return HttpResponseRedirect(reverse('home'))
+
+            else:
+                return render(request, 'students/students_add.html',
+                              {'groups': Group.objects.all().order_by('title'),
+                               'errors': errors})
+
+        elif request.POST.get('cancel_button') is not None:
+            HttpResponseRedirect(reverse('home'))
+
+    else:
+        return render(request, 'students/students_add.html',
+                      {'groups': Group.objects.all().order_by('title')})
+
     return render(request, 'students/students_add.html', {'groups': Group.objects.all().order_by('title')})
 
 
