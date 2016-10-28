@@ -131,6 +131,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 
 PORTAL_URL = 'http://localhost:8000'
 
+ADMIN_EMAIL = 'bo-a@yandex.ru'
+
 # from django.conf import global_settings
 #
 # TEMPLATE_CONTEXT_PROCESSORS = \

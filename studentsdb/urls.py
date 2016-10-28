@@ -35,6 +35,8 @@ urlpatterns = [
     url(r'^groups/(?P<gid>\d+)/edit/$', students.views.groups_edit, name='groups_edit'),
     url(r'^groups/(?P<gid>\d+)/delete/$', students.views.groups_delete, name='groups_delete'),
 
+    url(r'^contact-admin/$', 'students.views.contact_admin', name='contact_admin'),
+
     url(r'^admin/', admin.site.urls),
 
     # url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
