@@ -44,8 +44,8 @@ def students_add(request):
         if request.POST.get('add_button') is not None:
             errors = {}
             # validate students data will go here
-            data = {'middle_name': request.POST.get('midle_name').strip(),
-                    'notes': request.POST.get('notes').strip()}
+            data = {'middle_name': request.POST.get('midle_name', '').strip(),
+                    'notes': request.POST.get('notes', '').strip()}
 
             #validate user input
             first_name = request.POST.get('first_name', '').strip()
