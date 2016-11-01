@@ -16,7 +16,7 @@ from studentsdb.settings import ADMIN_EMAIL
 
 class ContactForm(forms.Form):
     from_email = forms.EmailField(
-        label=u"Ваша Евмейл Адреса"
+        label=u"Ваша Емейл Адреса"
     )
 
 
