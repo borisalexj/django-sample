@@ -17,6 +17,7 @@ import django
 from django.conf.urls import url, patterns
 from django.contrib import admin
 import students.views
+from studentsdb.StudentsList import StudentList
 
 urlpatterns = [
     # Students urls
@@ -24,6 +25,8 @@ urlpatterns = [
     url(r'^students/add/$', students.views.students_add, name='students_add'),
     url(r'^students/(?P<sid>\d+)/edit/$', students.views.students_edit, name='students_edit'),
     url(r'^students/(?P<sid>\d+)/delete/$', students.views.students_delete, name='students_delete'),
+
+    url(r'^student_list/$', StudentList.as_view()),
 
     # Journal urls
     url(r'^journal/$', students.views.journal, name='journal'),
