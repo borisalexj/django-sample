@@ -35,11 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
     'students'
 ]
 
 MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,8 +64,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 "django.core.context_processors.request",
-                'crispy-forms'
-                'studentsdb.context_processor.students_proc',
+
+                "studentsdb.context_processor.students_proc",
             ],
         },
     },
@@ -143,3 +144,6 @@ ADMIN_EMAIL = 'bo-a@yandex.ru'
 #         "django.core.context_processors.request",
 #         # 'studentsdb.context_processor.students_proc',
 #     ]
+
+# from django.core.context_processors.request
+# import crispy_forms.helper
