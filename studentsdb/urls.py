@@ -19,7 +19,7 @@ from django.contrib import admin
 
 import students.views
 from students.views.StudentsList import StudentList
-from students.views.StudentsUpdateView import StudentUpdateView
+from students.views import StudentUpdateView
 
 urlpatterns = [
     # Students urls

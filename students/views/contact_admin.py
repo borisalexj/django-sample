@@ -28,7 +28,7 @@ class ContactForm(forms.Form):
 
         # form tag attributes
         self.helper.form_class = 'form-horizontal'
-        self.helper.form_method = 'post'
+        self.helper.form_method = 'POST'
         self.helper.form_action = reverse('contact_admin')
 
         # twitter bootstrap styles
