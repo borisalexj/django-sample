@@ -1,11 +1,12 @@
 from django.views.generic import ListView
-from students.models import Student
+from ..models import Student
+
 
 class StudentList(ListView):
     model = Student
 
     context_object_name = 'students'
-    template = '/students/student_class_based_view_template'
+    # template = '/students/student_class_based_view_template'
 
     def get_context_data(self, **kwargs):
         """ this method adds extra variables to template """
